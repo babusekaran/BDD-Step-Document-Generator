@@ -6,11 +6,11 @@ git clone https://github.com/babusekaran/BDD-Step-Document-Generator.git
 
 open scripts/Step_Doc_Generator.py with your favorite editor and change the directory name (steps_dir) to you desired steps directory
 
-To generate Data for the document :
+To generate Data for the document : <br>
 python Step_Doc_Generator.py
 
-To show the steps in a HTML table :
-python -m SimpleHTTPServer
+To show the steps in a HTML table :<br>
+python -m SimpleHTTPServer <br>
 open http://localhost:8000/step_wiki.html
 
 
