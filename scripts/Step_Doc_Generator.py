@@ -44,10 +44,10 @@ class BDD_step_collector(object):
 
 
 def main():
-	dir = "D:\BDD_Steps"
-	if isdir(dir) : pass
+	steps_dir = "D:\steps"
+	if isdir(steps_dir) : pass
 	else : raise LookupError("Add a valid step dirctory to proceed") 
-	a = BDD_step_collector(dir)
+	a = BDD_step_collector(steps_dir)
 	a.find_steps()
 	step_json = []
 	for index , file , step in a.steps:
