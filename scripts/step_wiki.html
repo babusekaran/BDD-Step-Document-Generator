@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<title>
+		Step-Wiki
+		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+		<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				$.ajax(
+					{
+					url:'step-file.json',
+					dataType:'json',
+					
+					success: function(dataSet){
+						console.log(dataSet);
+						$('#step-table').DataTable( {
+							
+        data: dataSet,
+        columns: [
+            { title: "Step File" },
+            { title: "Step Index" },
+            { title: "Step Def" }
+        ]
+    } );
+					},
+					error: function(jqXHR,textStatus,errorThrown){
+							alert("Alert \n "+textStatus+"\n" +errorThrown)
+					}
+				});
+			});
+		</script>
+		<script type="text/javascript">
+		
+		</script>
+		
+	</head>
+	<body style="background: linear-gradient(to right, #dae2f8, #d6a4a4);">
+		<div class="page-header text-center">
+			<h1>BDD Step<small>&nbsp;Wiki</small></h1>
+		</div>
+		<br>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-offset-2 col-lg-8">
+					<table id='step-table' class="display" cellspacing="0" width="100%">
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
